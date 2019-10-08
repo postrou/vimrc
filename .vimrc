@@ -1,5 +1,9 @@
-" Colors
-set t_Co=256
+" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
 
 "
 " For Vundle
@@ -17,28 +21,34 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
- Plugin 'L9'
+" Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-Plugin 'vim-airline/vim-airline' 
-Plugin 'vim-airline/vim-airline-themes' 
+" My plugins
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='cobalt2'
 let g:airline_solarized_bg='dark'
+
+Plugin 'ycm-core/YouCompleteMe'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'Vimjas/vim-python-pep8-indent' 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,30 +73,25 @@ set linebreak	" Break lines at word (requires Wrap lines)
 set showbreak=+++ 	" Wrap-broken line prefix
 set textwidth=100	" Line wrap (number of cols)
 set showmatch	" Highlight matching brace
- 
+syntax on	" Syntax highlighting
+" set t_Co=256	" 256 colors
+
 set hlsearch	" Highlight all search results
 set smartcase	" Enable smart-case search
 set ignorecase	" Always case-insensitive
 set incsearch	" Searches for strings incrementally
- 
+
 set autoindent	" Auto-indent new lines
 set shiftwidth=4	" Number of auto-indent spaces
 set smartindent	" Enable smart-indent
 set smarttab	" Enable smart-tabs
 set softtabstop=4	" Number of spaces per Tab
- 
+
 "" Advanced
 set ruler	" Show row and column ruler information
- 
+
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
- 
- 
-" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
-nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Prevent vim from inserting newlines
 set textwidth=0 wrapmargin=0
@@ -97,8 +102,24 @@ set textwidth=0 wrapmargin=0
 " Default shell
 set shell=/bin/zsh
 
+" Splitright
+set splitright
+
 " Powerline symbols
 let g:airline_powerline_fonts = 1
 
-" vterm
-" command Vterm :vsp | :terminal | <c-w>j | :q
+" Disable line numbers in terminal
+au TermOpen * setlocal nonumber norelativenumber
+
+" Python mode
+" python3 << EOF
+" import vim
+" import git
+" def is_git_repo():
+"       try:
+"           _ = git.Repo('.', search_parent_directories=True).git_dir
+"           return "1"
+"       except:
+"           return "0"
+" vim.command("let g:pymode_rope = " + is_git_repo())
+" EOF
