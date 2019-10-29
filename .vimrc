@@ -99,9 +99,6 @@ set textwidth=0 wrapmargin=0
 " Colorscheme
 " colorscheme Tomorrow-Night
 
-" Default shell
-set shell=/bin/zsh
-
 " Splitright
 set splitright
 
@@ -111,15 +108,5 @@ let g:airline_powerline_fonts = 1
 " Disable line numbers in terminal
 au TermOpen * setlocal nonumber norelativenumber
 
-" Python mode
-" python3 << EOF
-" import vim
-" import git
-" def is_git_repo():
-"       try:
-"           _ = git.Repo('.', search_parent_directories=True).git_dir
-"           return "1"
-"       except:
-"           return "0"
-" vim.command("let g:pymode_rope = " + is_git_repo())
-" EOF
+" Keymaps
+nmap <silent> <C-H> :NERDTreeToggle<CR>
