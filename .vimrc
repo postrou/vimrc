@@ -109,4 +109,9 @@ let g:airline_powerline_fonts = 1
 au TermOpen * setlocal nonumber norelativenumber
 
 " Keymaps
-nmap <silent> <C-H> :NERDTreeToggle<CR>
+nmap <silent> <C-Q> :NERDTreeToggle<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
