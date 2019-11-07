@@ -48,6 +48,8 @@ Plugin 'ycm-core/YouCompleteMe'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 Plugin 'Vimjas/vim-python-pep8-indent' 
 
 " All of your Plugins must be added before the following line
