@@ -41,16 +41,14 @@ Plugin 'git://git.wincent.com/command-t.git'
 " My plugins
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='cobalt2'
+let g:airline_theme='minimalist'
 let g:airline_solarized_bg='dark'
 
 Plugin 'ycm-core/YouCompleteMe'
-
 Plugin 'scrooloose/nerdtree'
-
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-
 Plugin 'Vimjas/vim-python-pep8-indent' 
+Plugin 'doums/darcula'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -100,6 +98,7 @@ set textwidth=0 wrapmargin=0
 
 " Colorscheme
 " colorscheme Tomorrow-Night
+colorscheme darcula
 
 " Splitright
 set splitright
