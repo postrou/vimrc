@@ -41,7 +41,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 " My plugins
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='minimalist'
+let g:airline_theme='angr'
 let g:airline_solarized_bg='dark'
 
 Plugin 'ycm-core/YouCompleteMe'
