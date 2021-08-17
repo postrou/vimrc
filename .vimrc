@@ -45,10 +45,16 @@ let g:airline_theme='angr'
 let g:airline_solarized_bg='dark'
 
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'Shougo/deoplete.nvim'
+let g:deoplete#enable_at_startup = 1
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/home/twlvth/.pyenv/shims/python3'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Vimjas/vim-python-pep8-indent' 
 Plugin 'doums/darcula'
+Plugin 'tpope/vim-surround'
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
