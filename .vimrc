@@ -45,16 +45,17 @@ let g:airline_theme='angr'
 let g:airline_solarized_bg='dark'
 
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'Shougo/deoplete.nvim'
-let g:deoplete#enable_at_startup = 1
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/home/twlvth/.pyenv/shims/python3'
+" Plugin 'Shougo/deoplete.nvim'
+" let g:deoplete#enable_at_startup = 1
+" let g:python_host_prog = '/usr/bin/python2'
+" let g:python3_host_prog = '/home/twlvth/.pyenv/shims/python3'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Vimjas/vim-python-pep8-indent' 
 Plugin 'doums/darcula'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'preservim/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -116,7 +117,9 @@ let g:airline_powerline_fonts = 1
 au TermOpen * setlocal nonumber norelativenumber
 
 " Keymaps
-nmap <silent> <C-Q> :NERDTreeToggle<CR>
+nmap <silent> <F3> :NERDTreeToggle<CR>
+nmap <silent> <F4> :TagbarToggle<CR>
+nmap <silent> <F2> :below 15sp<CR> :term<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
